@@ -4,32 +4,56 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #f0f0f0;
-    font-family: sans-serif;
+    background-color: #f8f9fa;
+    font-family: 'Arial', sans-serif;
 }
 
 .container {
     text-align: center;
+    background: white;
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
 button {
-    padding: 15px 30px;
-    font-size: 20px;
+    padding: 15px 35px;
+    font-size: 1.2rem;
+    font-weight: bold;
     cursor: pointer;
-    background-color: #ff4757;
-    color: white;
     border: none;
-    border-radius: 8px;
-    transition: transform 0.1s;
+    border-radius: 10px;
+    transition: 0.2s;
+    margin: 10px;
 }
 
-button:active {
-    transform: scale(0.95);
+/* 폭발 버튼 스타일 */
+#boom-btn {
+    background-color: #ff4757;
+    color: white;
+}
+
+#boom-btn:hover {
+    background-color: #ff6b81;
+}
+
+/* 다시하기 버튼 스타일 */
+#reset-btn {
+    background-color: #2ed573;
+    color: white;
+}
+
+#reset-btn:hover {
+    background-color: #7bed9f;
+}
+
+/* 화면에서 숨기는 클래스 */
+.hidden {
+    display: none;
 }
 
 #result {
-    margin-top: 20px;
-    font-size: 40px;
-    font-weight: bold;
-    color: #2f3542;
+    margin-top: 30px;
+    font-size: 3rem;
+    min-height: 1.2em; /* 공간 확보 */
 }

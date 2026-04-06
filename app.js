@@ -1,12 +1,27 @@
-// 버튼과 결과창 요소를 가져옵니다.
-const btn = document.getElementById('boom-btn');
+// 1. 필요한 요소들을 모두 가져옵니다.
+const boomBtn = document.getElementById('boom-btn');
+const resetBtn = document.getElementById('reset-btn');
 const result = document.getElementById('result');
+const title = document.getElementById('title');
 
-// 버튼을 클릭했을 때 실행될 함수
-btn.addEventListener('click', function() {
-    // 화면에 '펑'을 출력합니다.
+// 2. [눌러보기] 버튼 클릭 이벤트
+boomBtn.addEventListener('click', function() {
+    // 메시지 표시
     result.textContent = "펑! 💥";
+    title.textContent = "터져버렸습니다!";
     
-    // 콘솔창(F12)에도 출력해봅니다.
-    console.log("펑");
+    // 버튼 교체 (폭발 버튼 숨기고, 다시하기 버튼 보이기)
+    boomBtn.classList.add('hidden');
+    resetBtn.classList.remove('hidden');
+});
+
+// 3. [다시하기] 버튼 클릭 이벤트 (돌아오는 기능)
+resetBtn.addEventListener('click', function() {
+    // 상태 초기화
+    result.textContent = "";
+    title.textContent = "버튼을 누르세요!";
+    
+    // 버튼 교체 (다시하기 버튼 숨기고, 폭발 버튼 보이기)
+    resetBtn.classList.add('hidden');
+    boomBtn.classList.remove('hidden');
 });
